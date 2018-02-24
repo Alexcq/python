@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+
+    <body>
+
+            {% if blog %}
+                <form method="POST" action="/write/{{ blog.id }}/" >
+                <label>标题:</label>
+                <input type="text" name="title" id="title" placeholder="" value="{{ blog.title }}" >
+                <br>
+                <label>内容:</label>
+                 <textarea name="context"  id="context" placeholder="" >{{ blog.content }}</textarea>
+                <br>
+                <input type="submit" value="修改">
+                <br>
+                <a href="/blog/" >返回</a>
+                </form>
+            {% else %}
+                <form method="POST" action="/write/" >
+                <label>标题</label>
+                <input type="text" name="title" id="title" placeholder="标题" >
+                <br>
+                <br>
+                <label>内容</label>
+                <textarea name="context"  id="context" placeholder="内容" ></textarea>
+                <br>
+                <input type="submit" value="提交">
+                </form>
+            {% endif %}
+
+    </body>
+</html>

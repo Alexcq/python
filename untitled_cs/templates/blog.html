@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h5>User ; {{ user.name }}</h5>
+{% if blogs %}
+    {% for title in blogs %}
+        <h1><a href="new/{{ title.id }}">{{ title.title }}</a>------<a href="{{ title.id }}/ ">删除</a></h1>
+    {% endfor %}
+{% endif %}
+<a href="/new/">新建博客</a>
+</body>
+</html>
